@@ -1,4 +1,9 @@
 const express = require('express');
+const { buildSchema } = require('graphql');
+
+const schema = buildSchema(`
+    type Query
+`);
 
 const app = express();
 
