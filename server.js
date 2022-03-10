@@ -5,8 +5,12 @@ const { graphqlHTTP } = require('express-graphql');
 
 const schema = buildSchema(`
     type Query {
-        description: String
-        price: Float
+        products: [Product]
+    }
+
+    type Product {
+        description: String!
+        price: Float!
     }
 `);
 
