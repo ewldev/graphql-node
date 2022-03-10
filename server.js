@@ -17,10 +17,10 @@ const root = {
 
 const app = express();
 
-app.use(graphqlHTTP({
+app.use('/graphql', graphqlHTTP({
     schema: schema,
-    rootValue:
-}))
+    rootValue: root,
+}));
 
 app.listen(3000, () => {
     console.log('Running GraphQL server...');
