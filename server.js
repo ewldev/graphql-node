@@ -36,6 +36,35 @@ const schema = buildSchema(`
 const root = {
     description: 'Blue T-Shirt',
     price: 30.12,
+    products: [
+        {
+          id: 'bluetshirt',
+          description: 'Blue T-Shirt',
+          price: 30.95,
+        },
+        {
+          id: 'greypant',
+          description: 'Grey Pants',
+          price: 79.85,
+        }
+      ],
+      orders: [
+        {
+          date: '2021-3-20',
+          subtotal: 51.00,
+          items: [ 
+            {
+              product: {
+                id: 'bluetshirt',
+                description: 'Old Blue T-Shirt',
+                price: 25.50,
+              },
+              quantity: 2,
+            }
+          ]
+        }
+      ]
+
 };
 
 const app = express();
