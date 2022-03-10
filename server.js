@@ -22,6 +22,6 @@ app.use('/graphql', graphqlHTTP({
     rootValue: root,
 }));
 
-app.listen(3000, () => {
+app.listen(5000, () => {
     console.log('Running GraphQL server...');
 });
