@@ -3,35 +3,7 @@ const { graphqlHTTP } = require('express-graphql');
 
 const { makeExecutableSchema } = require('@graphql-tools/schema');
 
-const schemaText = `
-type Query {
-    products: [Product]
-    orders: [Order]
-}
 
-type Product {
-    id: ID!
-    description: String!
-    reviews: [Review]
-    price: Float!        
-}
-
-type Review {
-    rating: Int!
-    comment: String
-}
-
-type Order {
-    date: String!
-    subtotal: Float!
-    items: [OrderItem]
-}
-
-type OrderItem {
-    product: Product!
-    quantity: Int!
-}
-`;
 
 const schema = makeExecutableSchema ({
     typeDefs: [schemaText]
