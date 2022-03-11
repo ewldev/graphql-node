@@ -13,7 +13,7 @@ const schema = makeExecutableSchema ({
       Query: {
         products: (parent) => {
           console.log('Getting the products...');
-          return parent.products;
+          return Promise.resolve(parent.products);
         },
         orders: (parent) => {
           console.log('Getting orders...');
