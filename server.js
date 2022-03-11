@@ -1,17 +1,17 @@
+const path = require('path');
 const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
 
+const { loadFilesSync } = require('@graphql-tools/load-files');
 const { makeExecutableSchema } = require('@graphql-tools/schema');
 
-
+const typesArray = loadFilesSync(path.join(__dirname, '**/*.graphql'));
 
 const schema = makeExecutableSchema ({
-    typeDefs: [schemaText]
+    typeDefs: [typesArray]
 })
 
 const root = {
-    description: 'Blue T-Shirt',
-    price: 30.12,
     products: [
         {
           id: 'bluetshirt',
