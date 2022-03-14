@@ -1,5 +1,10 @@
+const productsModel = require('./products.model');
+
 module.exports = {
     Query: {
-        products: () => {}
+        products: () => {
+            return productsModel.getAllProducts();
+        }
     }
 };
+
