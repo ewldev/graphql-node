@@ -1,3 +1,13 @@
+query {
+  products {
+    description
+    reviews {
+      rating
+      comment
+    }
+  }
+}
+
 {
   product(id: "greypant") {
     description

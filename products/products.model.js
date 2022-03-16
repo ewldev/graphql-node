@@ -39,11 +39,27 @@ function addNewProduct(id, description, price) {
   
     products.push(newProduct);
     return newProduct;
-  }
+}
+
+function addNewProductReview(id, rating, comment) {
+    const matchedProduct = getProductById(id);
+  
+    if (matchedProduct) {
+      const newProductReview = {
+        rating,
+        comment,
+      };
+  
+      matchedProduct.reviews.push(newProductReview);
+  
+      return newProductReview;
+    }
+}  
 
 module.exports = {
     getAllProducts,
     getProductsByPrice,
     getProductById,
     addNewProduct,
+    addNewProductReview,
 }
